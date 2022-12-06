@@ -19,8 +19,10 @@
 #ifndef MPUI2C_H
 #define MPUI2C_H
 
-#include <stdio.h> 
-#include <stdlib.h> 
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <fcntl.h>
 /****************************************************************************
 **                MACRO REGISTER ADDRESS CONFIG MPU-6050
 *****************************************************************************/
@@ -64,13 +66,13 @@
 /*-----------------------------------------------------------------------------
  *  Function prototype
  *-----------------------------------------------------------------------------*/
-int file; //Device file
+//int file; //Device file
 // inicializando modulo
 void mod_MPU6050();
 
 /*I2C data bytes are defined to be 8-bits long.*/
 /*mestre transmite a condição de partida e escreve os dados no registrador do sensor*/
-int writeMPU(uint8_t addr_start, uint8_t dados);
+int writeMPU(uint8_t addr_start, uint8_t dados, int file);
 
 /*
 Para ler os registradores internos do MPU-60X0, o mestre envia uma condição de partida,
@@ -78,12 +80,12 @@ seguida do endereço I2C e um bit de escrita e, em seguida, o endereço do regis
 Ao receber o sinal ACK do MPU-60X0, o mestre transmite um sinal de início seguido do endereço do
 escravo e do bit de leitura. Como resultado, O MPU-60X0 envia um sinal ACK e os dados.
 */
-int readMPU(uint8_t addr_start, char *buffer, uint32_t tamByte);
+int readMPU(uint8_t addr_start, char *buffer, uint32_t tamByte, int file);
 
 /*leitura dos valores bruto do acelerometro */
-void read_acc(short int *value);
+void read_acc(short int *value, int file);
 
 /*leitura dos valores bruto do giroscopio */
-void read_gyro(short *value);
+void read_gyro(short *value, int file);
 #endif
 /*****************************END OF FILE**************************************/
