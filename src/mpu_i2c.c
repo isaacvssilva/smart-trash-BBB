@@ -1,4 +1,23 @@
-#include "../inc/mpu.h"
+/*
+ * =====================================================================================
+ *
+ *       Filename:  mpu.c
+ *
+ *    Description:  -
+ *
+ *        Version:  1.0
+ *        Created:  06/12/2022 17:44:02
+ *       Revision:  none
+ *       Compiler:  arm-linux-gnueabihf-gcc
+ *
+ *         Author:  Isaac Vinicius, Hugo Bessa, Gislan Souza
+ *                  isaacvinicius2121@alu.ufc.br, hugobessa@alu.ufc.br, gislansouza@alu.ufc.br   
+ *   Organization:  UFC-Quixadá
+ *
+ * =====================================================================================
+ */
+
+#include "../inc/mpu_i2c.h"
 
 int writeMPU(uint8_t addr_start, uint8_t dados, int file){
     /*mestre coloca endereço do registrador e os dados do registrador no barramento.*/

@@ -60,13 +60,21 @@
 #define ACCEL_FS_SEL_2 4096  // esacala ± 8
 #define ACCEL_FS_SEL_3 2048  // esacala ± 16
 #define I2C_DEVICE_FILE "/dev/i2c-2" //use the I2C ports(P9_19 | P9_20)
-#include <stdint.h>
+#include <errno.h>
+#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <linux/i2c-dev.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdint.h>
 
 /*-----------------------------------------------------------------------------
  *  Function prototype
  *-----------------------------------------------------------------------------*/
-//int file; //Device file
 // inicializando modulo
 void mod_MPU6050(int file);
 

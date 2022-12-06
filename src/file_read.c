@@ -1,11 +1,24 @@
-#include "../inc/fileHandler.h"
-
-/* 
- * ===  FUNCTION  ======================================================================
- *         Name:  writeFile
- *  Description:  
+/*
+ * =====================================================================================
+ *
+ *       Filename:  file_read.c
+ *
+ *    Description:  -
+ *
+ *        Version:  1.0
+ *        Created:  06/12/2022 17:52:25
+ *       Revision:  none
+ *       Compiler:  arm-linux-gnueabihf-gcc
+ *
+ *         Author:  Isaac Vinicius, Hugo Bessa, Gislan Souza
+ *                  isaacvinicius2121@alu.ufc.br, hugobessa@alu.ufc.br, gislansouza@alu.ufc.br
+ *   Organization:  UFC-Quixadá
+ *
  * =====================================================================================
  */
+
+#include "../inc/file_read.h"
+
 int writeFile(const char* str, int size_str, const char* path){
     FILE *file = NULL; 
     file = fopen(path, "w");
@@ -19,12 +32,6 @@ int writeFile(const char* str, int size_str, const char* path){
     }
 }
 
-/* 
- * ===  FUNCTION  ======================================================================
- *         Name:  readFileInt
- *  Description:  
- * =====================================================================================
- */
 int readFileInt(int* num, const char* path){
     FILE *file = NULL;
     file = fopen(path, "r");
