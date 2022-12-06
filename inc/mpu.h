@@ -68,7 +68,7 @@
  *-----------------------------------------------------------------------------*/
 //int file; //Device file
 // inicializando modulo
-void mod_MPU6050();
+void mod_MPU6050(int file);
 
 /*I2C data bytes are defined to be 8-bits long.*/
 /*mestre transmite a condição de partida e escreve os dados no registrador do sensor*/

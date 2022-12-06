@@ -70,7 +70,7 @@ void leituraMPU(){
         close(file);
         exit(-1);
     }
-    mod_MPU6050();
+    mod_MPU6050(file);
 
     while(1){
         read_acc(acc_value, file);
