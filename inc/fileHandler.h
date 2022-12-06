@@ -2,6 +2,7 @@
 #define FILEHANDLER_H_
 
 #include <stdio.h>
+#include <stdlib.h>
 
 /*-----------------------------------------------------------------------------
  *  Function prototype

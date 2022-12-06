@@ -9,6 +9,9 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdint.h>
+
+#include "../inc/fileHandler.h"
+
 #define PATH_GPIO "/sys/class/gpio/"
 #define PATH_PWM_EXPORT "/sys/class/pwm/pwmchip0/export"
 #define PATH_PWM_UNEXPORT "/sys/class/pwm/pwmchip0/unexport"

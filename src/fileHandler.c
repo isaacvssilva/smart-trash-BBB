@@ -1,4 +1,4 @@
-#include "fileHandler.h"
+#include "../inc/fileHandler.h"
 
 /* 
  * ===  FUNCTION  ======================================================================
