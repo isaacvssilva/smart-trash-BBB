@@ -31,7 +31,7 @@ int main(){
 
     /*exportando diretorio do gpio48(P9_15), e setando como entrada para conectar o sensor*/
     writeFile(GPIO_48, sizeof(GPIO_48), PATH_GPIO"export");
-    writeFile(GPIO_48, sizeof(GPIO_48), PATH_GPIO"gpio48/direction");
+    writeFile(IN, sizeof(IN), PATH_GPIO"gpio48/direction");
 
     /*exportando diretorio do PWM canal 0 (P9_22), para conectar o servo*/
     writeFile("0", 1, PATH_PWM_EXPORT);
