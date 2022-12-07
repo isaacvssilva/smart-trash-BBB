@@ -21,7 +21,7 @@
 void leituraAproximacao(){
     printf("Inicio da task leituraAproximacao\n");
     int valueAnalog = 0;
-    while (1){
+    while(1){
         /*Verificando valor de saida do sensor IR*/
         readFileInt(&valueAnalog, PATH_GPIO"gpio48/value");
 
@@ -84,4 +84,22 @@ void leituraMPU(){
         }
         usleep(200000);
     } 
+}
+
+void leituraCapacidade(){
+    printf("Inicio da task leituraCapacidade\n");
+    int valueAnalog = 0;
+    while(1){
+        /*Verificando valor de saida do sensor IR*/
+        readFileInt(&valueAnalog, PATH_GPIO"gpio30/value");
+
+        /*Se saida do sensor IR igual a 0, lixera esta cheia*/
+        if (valueAnalog == 0){
+            writeFile("1", 1, PATH_GPIO"gpio31/value");
+            sleep(1);
+        } /*Se saida do sensor IR igual a 1, lixera nao atingiu a capacidade*/
+        else{
+            writeFile("0", 1, PATH_GPIO"gpio31/value");
+        }
+    }
 }

@@ -48,6 +48,8 @@
 #define DC_OPEN "2000000"
 #define GPIO_48 "48"
 #define GPIO_60 "60"
+#define GPIO_30 "30"
+#define GPIO_31 "31"
 #define OUT "out"
 #define IN "in"
 
