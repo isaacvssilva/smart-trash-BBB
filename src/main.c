@@ -58,8 +58,9 @@ int main(){
     pthread_create(&task_capacidade, NULL, (void*) leituraCapacidade, NULL);
     pthread_create(&task_mpu, NULL, (void*) leituraMPU, NULL);
 
-    /*bloquea a main ate t2 terminar. parametros: thread, motivo do termino*/
+    /*bloquea a main ate as tasks terminar. parametros: thread, motivo do termino*/
     pthread_join(task_aproximacao, NULL);
+    pthread_join(task_capacidade, NULL);
     pthread_join(task_mpu, NULL);
 
     /*removendo diretorio do gpio48(P9_15), e setando como entrada para conectar o sensor*/
